@@ -5,7 +5,7 @@
     border-radius: 10px;
     font-family: sans-serif;
     margin: 5px;
-    text-align: left;
+    text-align: center;
     background-color: white;
   }
   
@@ -22,3 +22,11 @@
     font-size: 20px;
     font-style: italic;
   }
+  .card button {
+    margin-top: 16px;
+    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+    border: 1px solid #30CFD0;
+    border-radius: 3px;
+    color: white;
+    margin-bottom: 2px;
+}
