@@ -1,47 +1,26 @@
 import { useState } from "react";
 import logo from './logo.svg';
 import './App.css';
-import NameCard from './components/NameCard';
-// import Counter from './components/Counter';
-// import Student from './components/Student';
-import LoginForm from './components/LoginForm';
-import TotalAge from "./components/TotalAge";
+import UserForm from "./components/UserForm";
+import TotalUser from "./components/TotalUser";
+
 function App() {
-  const [users, setUsers] = useState([
-    { name: "Alice", age: 19, gender: "female" },
-    { name: "John", age: 29, gender: "male" },
-    { name: "Cris", age: 19, gender: "male" },
-  ]);
+  const [users, setUsers] = useState([]);
 
-  const increaseAge = (name) => {
-    console.log(name);
-    // name = Alice
-    const newUsers = [...users];
-    newUsers.forEach((user, index) => {
-      if (user.name === name) {
-        users[index].age += 1;
-      }
-    });
-
-    setUsers(newUsers);
+  const handleFormSubmit = (newUser) => {
+    // Thêm user mới vào danh sách users
+    // Thêm mới user sau khi bấm submit
+    setUsers([...users, newUser]);
   };
-
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <h1>User Form</h1>
+        <UserForm onFormSubmit={handleFormSubmit} />
 
-        {/* không nên vì sau này dữ liệu càng ngày càng nhiều*/}
-        {/* <NameCard name="Alice" age={19} gender="female"/>
-        <NameCard name="John" age={29} gender="male"/>
-        <NameCard name="Cris" age={19} gender="male"/> */}
-
-        {/* Nên làm*/}
-        <NameCard user={users[0]} increaseAge={increaseAge} />
-        <NameCard user={users[1]} increaseAge={increaseAge} />
-        <NameCard user={users[2]} increaseAge={increaseAge} />
-        <TotalAge users={users}/>
-        <LoginForm />
+        <h1>Total Users</h1>
+        <TotalUser users={users} />
       </header>
     </div>
   );
