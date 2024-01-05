@@ -7,6 +7,7 @@ const TotalUser = ({ users }) => {
   const totalFemale = users.filter((user) => user.gender === 'female').length;
 
   return (
+    
     <div>
       <p>Total Users: {totalUsers}</p>
       <p>Total Age: {totalAge}</p>
