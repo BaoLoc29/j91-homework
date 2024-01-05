@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+import './style.css'
 
 const UserForm = ({ onFormSubmit }) => {
-        // Do người dùng nhập nên giá trị ban đầu là rỗng
+    // Do người dùng nhập nên giá trị ban đầu là rỗng
     // Riêng gender là giới tính nên để mặt định là male
     const [name, setName] = useState('');
     const [age, setAge] = useState('');
     const [gender, setGender] = useState('male');
 
     const handleSubmit = () => {
+
         // Kiểm tra xem có giá trị nhập vào hay không
         if (name.trim() === '' || age.trim() === '') {
             alert('Vui lòng nhập đầy đủ thông tin.');
@@ -24,7 +26,7 @@ const UserForm = ({ onFormSubmit }) => {
     };
 
     return (
-        <div>
+        <div className='user-form'>
             <div>
                 <label>Name: </label>
                 <input type="text" value={name} onChange={(e) => setName(e.target.value)} />

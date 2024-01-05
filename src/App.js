@@ -11,6 +11,7 @@ function App() {
     // Thêm user mới vào danh sách users
     // Thêm mới user sau khi bấm submit
     setUsers([...users, newUser]);
+    console.log(newUser);
   };
   return (
     <div className="App">
@@ -21,6 +22,7 @@ function App() {
 
         <h1>Total Users</h1>
         <TotalUser users={users} />
+        
       </header>
     </div>
   );
