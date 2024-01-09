@@ -1,38 +1,34 @@
-import { useState } from "react";
+import React, { useState } from 'react';
+import TodoItem from '../TodoItem';
+import TODOS from '../../data/todos';
+
 const TodoList = () => {
-    // todo = todo item
-    // todos = todo list
-    const [todos, setTodos] = useState(["Doing homework", "Shoping", "Fishing"]);
+  const [todos, setTodos] = useState(TODOS);
 
-    // cách cũ dài hơn
-    // const todosLi = [];
-    // todos.forEach((todo) => {
-    //     todosLi.push(<li>{todo}</li>);
-    // });
-
-    // cách mới là dùng MAP
-    const todosLi = todos.map((todo) => (
-        <li key={todo}>
-            <span>{todo}</span>
-        </li>
-    ));
-    
-    // const renderTodosLi = () => {
-    //     // update
-    //     // ...
-    //     // return
-    // };
-    const handelAddTodo = () => {
-        setTodos(prev => {
-            return [...prev, `new todo ${prev.length + 1}`]
-        })
-    };
-
-    return (
-        <div className="todo-list">
-            <button onClick={handelAddTodo}>Add todo</button>
-            <ul>{todosLi}</ul>
-        </div>
+  const handleCompleted = (id) => {
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
     );
+    setTodos(updatedTodos);
+  };
+
+  const handleDeleted = (id) => {
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(updatedTodos);
+  };
+
+  return (
+    <div>
+      {todos.map((todo) => (
+        <TodoItem
+          key={todo.id}
+          todo={todo}
+          onComplete={handleCompleted}
+          onDelete={handleDeleted}
+        />
+      ))}
+    </div>
+  );
 };
+
 export default TodoList;
