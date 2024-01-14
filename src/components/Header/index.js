@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import './style.css'
 import ThemeContext from '../../Context/ThemeContext';
 const Header = () => {
@@ -8,13 +9,21 @@ const Header = () => {
         setTheme(theme === "dark" ? "light" : "dark");
         setIsLightMode(!isLightMode);
     };
+    const handleNavLinkClas = (params) =>{
+        return `link ${params.isActive ? "link-active" : ""}`;
+    };
     return (
         <div className='header__select'>
             <ul className={`nav-menu ${theme}`}>
-                <li>Learn</li>
-                <li>Reference</li>
-                <li>Community</li>
-                <li>Blog</li>
+                <li>
+                    <NavLink className={handleNavLinkClas} to="/">Home</NavLink>
+                </li>
+                <li>
+                    <NavLink className={handleNavLinkClas} to="/welcome">Welcome</NavLink>
+                </li>
+                <li>
+                    <NavLink className={handleNavLinkClas} to="/profile">Profile</NavLink>
+                </li>
                 <li onClick={handleThemeChange}>
                     <i className={`fa-solid ${isLightMode ? "fa-moon fa-moon-dark" : "fa-sun"}`}></i>
                 </li>
