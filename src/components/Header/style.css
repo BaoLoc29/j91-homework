@@ -1,0 +1,35 @@
+.header__select {
+  background-color: white;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  display: block;
+  padding: 14px 30px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-menu li i {
+  font-size: 20px;
+}
+
+.light {
+  background-color: white;
+  color: black;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+.fa-moon-dark {
+  color: black;
+}

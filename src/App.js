@@ -1,17 +1,17 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 import TodoList from "./components/TodoList";
+import Header from './components/Header';
+import ThemeContext from './Context/ThemeContext';
 function App() {
+  const [theme, setTheme] = useState("dark");
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        {/* {isLoggedIn && <h4>Account User Is Loc</h4>}
-        <button style={{ backgroundColor: isLoggedIn ? "yellow" : "red" }}
-          onClick={() => { setIsLoggedIn(!isLoggedIn) }}>
-          {isLoggedIn ? "Logout" : "Login"}
-        </button> */}
-        <TodoList />
+        <ThemeContext.Provider value={{theme: theme, setTheme : setTheme}}>
+          <Header />
+          <TodoList />
+        </ThemeContext.Provider>
       </header>
     </div>
   );

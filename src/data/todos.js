@@ -15,10 +15,5 @@ const TODOS = [
         todo: "Have breakfast",
         isCompleted: false,
     },
-    {
-        id: uuidv4(),
-        todo: "Play game",
-        isCompleted: false
-    },
 ];
 export default TODOS;
