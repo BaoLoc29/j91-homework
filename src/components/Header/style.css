@@ -1,6 +1,5 @@
 .header__select {
-  background-color: white;
-  width: 70%;
+  width: 100%;
 }
 
 .nav-menu {
@@ -9,6 +8,11 @@
   justify-content: center;
   margin: 0;
   padding: 0;
+}
+.nav-menu li a{
+  text-decoration: none;
+  font-weight: bold;
+  color: inherit;
 }
 
 .nav-menu li {
@@ -20,9 +24,6 @@
   font-size: 20px;
   padding: 0 20px;
 }
-.nav-menu a{
-  color: rgb(125, 125, 125);
-}
 
 .light {
   background-color: white;
@@ -33,17 +34,14 @@
   background-color: black;
   color: white;
 }
-.fa-moon-dark {
-  color: black;
-}
-
 
 /* header link */
-.header__select .link{
-  text-decoration: none;
+.header__select .link {
   padding: 14px 30px;
 }
-.header__select .link-active{
-  color: white;
+
+.header__select .link-active {
   background-color: rgb(218, 18, 18);
+  color: white;
 }
+

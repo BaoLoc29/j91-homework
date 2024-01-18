@@ -10,10 +10,8 @@ h1{
     margin: auto;
     padding: 0 12px;
 }
-a {
-    text-decoration: none !important;
-    color: hsl(357, 74%, 67%);
-    color: rgb(186, 73, 73);
+.catchcopy__text a{
+    color: red;
+    text-decoration: none;
     font-weight: bold;
-    color: hsl(2, 66%, 58%);
 }
