@@ -9,23 +9,23 @@ const Header = () => {
         setTheme(theme === "dark" ? "light" : "dark");
         setIsLightMode(!isLightMode);
     };
-    const handleNavLinkClas = (params) =>{
+    const handleNavLinkClass = (params) =>{
         return `link ${params.isActive ? "link-active" : ""}`;
     };
     return (
         <div className='header__select'>
             <ul className={`nav-menu ${theme}`}>
                 <li>
-                    <NavLink className={handleNavLinkClas} to="/">Home</NavLink>
+                    <NavLink className={handleNavLinkClass} to="/">Home</NavLink>
                 </li>
                 <li>
-                    <NavLink className={handleNavLinkClas} to="/welcome">Welcome</NavLink>
+                    <NavLink className={handleNavLinkClass} to="/welcome">Welcome</NavLink>
                 </li>
                 <li>
-                    <NavLink className={handleNavLinkClas} to="/profile">Profile</NavLink>
+                    <NavLink className={handleNavLinkClass} to="/profile">Profile</NavLink>
                 </li>
                 <li onClick={handleThemeChange}>
-                    <i className={`fa-solid ${isLightMode ? "fa-moon fa-moon-dark" : "fa-sun"}`}></i>
+                    <i className={`fa-solid ${isLightMode ? "fa-moon" : "fa-sun"}`}></i>
                 </li>
                 <li><i class={`fa-solid fa-cat ${theme}`}></i></li>
             </ul>
