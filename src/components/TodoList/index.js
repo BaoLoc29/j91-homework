@@ -1,11 +1,14 @@
 // TodoList.js
-import React, { useState } from 'react';
+import { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+import './style.css';
 import TodoItem from '../TodoItem';
 import TODOS from '../../data/todos';
 import AddTodo from '../AddTodo';
 const TodoList = () => {
   const [todos, setTodos] = useState(TODOS);
   const [todoText, setTodoText] = useState("");
+  // const navigate = useNavigate();
 
   const handleComplete = (id) => {
     const updatedTodos = todos.map((todo) =>
@@ -36,17 +39,17 @@ const TodoList = () => {
     setTodos((prevTodos) => [...prevTodos, newTask]);
   };
   return (
-    <div>
+    <div className='todo-list'>
       {todos.map((todo) => (
-        <TodoItem
-          key={todo.id}
-          todo={todo}
-          onComplete={handleComplete}
-          onDelete={handleDelete}
-          onEditTask={handleEdit}
-          todoText={todoText}
-          setTodoText={setTodoText}
-        />
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            onComplete={handleComplete}
+            onDelete={handleDelete}
+            onEditTask={handleEdit}
+            todoText={todoText}
+            setTodoText={setTodoText}
+          />
       ))}
       <AddTodo onAddTask={handleAddTask} />
     </div>
