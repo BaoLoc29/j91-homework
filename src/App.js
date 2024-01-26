@@ -1,26 +1,19 @@
-import { useState } from 'react';
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import './App.css';
-import Todo from './pages/Todo';
-import Header from './components/Header';
-import Welcome from './pages/Welcome';
-import ThemeContext from './Context/ThemeContext';
-import Profile from './pages/Profile';
+import TodoList from "./components/TodoList";
+import TodoDetail from "./pages/TodoDetail";
 function App() {
-  const [theme, setTheme] = useState("dark");
   return (
     <div className="App">
-        <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Outlet />} >
-              <Route index element={<Todo />} />
-            </Route>
-            <Route path="/welcome" element={<Welcome />} />
-            <Route path='/profile' element={<Profile />} />
-            <Route path="*" element={<h1>Page not found</h1>} />
-          </Routes>
-        </ThemeContext.Provider>
+      <header className="App-header">
+        <Routes>
+          <Route path="/" element={<TodoList />} />
+          <Route path="/:todoId" element={<TodoDetail />} />
+          {/* <Route path="/" element={<Products />} />
+          <Route path="/:productId" element={<ProductDetail />} /> */}
+          
+        </Routes>
+      </header>
     </div>
   );
 }
