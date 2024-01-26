@@ -10,7 +10,6 @@ function App() {
   const [theme, setTheme] = useState("dark");
   return (
     <div className="App">
-      <header className="App-header">
         <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
           <Header />
           <Routes>
@@ -22,7 +21,6 @@ function App() {
             <Route path="*" element={<h1>Page not found</h1>} />
           </Routes>
         </ThemeContext.Provider>
-      </header>
     </div>
   );
 }

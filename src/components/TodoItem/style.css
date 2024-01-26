@@ -237,4 +237,7 @@ input:focus{
     display: inline-block;
 }
 
+a{
+  color: red ;
+}
 
